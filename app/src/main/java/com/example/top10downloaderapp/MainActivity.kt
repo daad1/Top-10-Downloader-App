@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var recView: RecyclerView
     lateinit var Binding: ActivityMainBinding
-    var appList = ArrayList<topData>()
+    var appList = ArrayList<dataApp>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,9 +81,9 @@ class MainActivity : AppCompatActivity() {
 
                         else -> {
                             Log.d("App10 ", "$topTenApp")
-                            if(!topTenApp.isEmpty()) {
+                            if (!topTenApp.isEmpty()) {
 
-                                val App = topData(topTenApp)
+                                val App = dataApp(topTenApp)
                                 appList.add(App)
 
 
@@ -102,14 +102,9 @@ class MainActivity : AppCompatActivity() {
         } catch (e: XmlPullParserException) {
             e.printStackTrace()
 
-        }
-
-        catch(e: IOException) {
+        } catch (e: IOException) {
             e.printStackTrace()
         }
     }
 }
 
-class topData(topTendon: String) {
-    lateinit var name : String
-}
